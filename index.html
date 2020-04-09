@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TFJS</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+</head>
+
+<body>
+    <div class="h-100">
+        <div class="container">
+            <div class="jumbotron">
+                <h1 class="text-center">Question Answering Bot</h1>
+                <div class="input-group " style="min-height: 35vh;margin-top: 1rem;">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Passage</span>
+                    </div>
+                    <textarea id='text' class="form-control"
+                        aria-label="With textarea">An apple is a sweet, edible fruit produced by an apple tree (Malus domestica). Apple trees are cultivated worldwide andare the most widely grown species in the genus Malus. The tree originated in Central Asia, where its wild ancestor,Malus sieversii, is still found today. Apples have been grown for thousands of years in Asia and Europe and were broughtto North America by European colonists. Apples have religious and mythological significance in many cultures, includingNorse, Greek and European Christian tradition.   </textarea>
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">Question</span>
+                    </div>
+                    <input type="text" id="question" class="form-control" placeholder="What , How , When .."
+                        aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+                <button id="load-btn" class="btn btn-warning">Load Model</button>
+                <button id="question-btn" class="btn btn-success" style="display: none;">Ask</button>
+                <div id='temp' style="display: none;" class="table-responsive">
+                    <table class="table-striped table-dark table-hower table" style="margin-top: 2rem;">
+                        <thead>
+                            <td>Answer</td>
+                            <td>Confidence</td>
+                        </thead>
+                        <tbody id="ans"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <style>
+        td {
+            font-weight: bold;
+            text-transform: capitalize;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"> </script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/qna"> </script>
+    <script src="script.js"></script>
+</body>
+
+</html>
